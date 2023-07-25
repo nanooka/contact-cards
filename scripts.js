@@ -1,6 +1,30 @@
 let cardCounter = 1;
 const addBtn = document.querySelector(".add-btn");
 const submit = document.getElementById("submit");
+const formm = document
+  .getElementById("newFormSomething")
+  .addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    gikeqsa({
+      name: event.target.name.value,
+      number: event.target.number.value,
+      email: event.target.email.value,
+    });
+  });
+
+function givi() {
+  return formm;
+}
+
+/*
+
+1) add new object to cards, use fake image url for now
+2) while adding new object, add ID for them
+
+2) delete button should be delete element from cards array
+3) edit button should be edit element from cards array
+*/
 
 const cards = [
   {
@@ -8,18 +32,21 @@ const cards = [
     name: "Name",
     phone: "123456789",
     email: "asd123@gmail.com",
+    id: 1,
   },
   {
     img: "https://img.freepik.com/premium-vector/young-girl-anime-style-character-vector-illustration-design-manga-anime-girl-hair-faces-cartoon_147933-1139.jpg",
     name: "Nanuka",
     phone: "321123",
     email: "qweqwe@gmail.com",
+    id: 2,
   },
   {
     img: "https://img.freepik.com/premium-vector/young-girl-anime-style-character-vector-illustration-design-manga-anime-girl-hair-faces-cartoon_147933-1139.jpg",
     name: "Nino",
     phone: "9999999",
     email: "dfgfg2@gmail.com",
+    id: 3,
   },
 ];
 
@@ -68,10 +95,18 @@ function addContactCard() {
   </form>
     `;
 
-  contactContainer.insertAdjacentHTML("beforeend", newCardHTML);
+  contactContainer.insertAdjacentElement("beforeend", newCardHTML);
   cardCounter++;
 }
 
-submit.addEventListener(click, () => {
-  console.log("clicked");
-});
+function gikeqsa(param1) {
+  let pp = {
+    ...param1,
+    id: 12,
+    img: "https://img.freepik.com/premium-vector/young-girl-anime-style-character-vector-illustration-design-manga-anime-girl-hair-faces-cartoon_147933-1139.jpg",
+  };
+
+  cards.push(pp);
+
+  console.log("gikeqsashi vart", cards);
+}

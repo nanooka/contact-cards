@@ -5,22 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact cards</title>
     <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="/main.css" />
+    <link rel="stylesheet" href="main.css" />
   </head>
   <body>
     <header>
       <h1>Contact cards</h1>
       <div class="log-sign">
         <a href="">Log in</a>
-        <a href="">Sign up</a>
+        <a href="signup.html">Sign up</a>
       </div>
     </header>
     <main>
       <div class="container">
         <div id="card" class="card-plus">
-          <button class="add-btn" onclick="addContactCard()">
-            Add contact
-          </button>
+          <button class="add-btn" onclick="">Add contact</button>
+          <div>
+            <form id="newFormSomething" class="info">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                autocomplete="given-name"
+              />
+
+              <label for="number">Phone number</label>
+              <input type="text" name="number" id="number" />
+
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" autocomplete="off" />
+
+              <button id="submit" type="submit" onsubmit="givi()">
+                Submit
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </main>
