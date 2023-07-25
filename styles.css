@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Open Sans";
+}
+header {
+  background-color: rgb(171, 171, 236);
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+}
+h1 {
+  font-size: 24px;
+  font-weight: 700;
+}
+h2 {
+  font-size: 24px;
+  font-weight: 700;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  align-items: center;
+  margin-top: 50px;
+  color: rgb(117, 117, 181);
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 360px;
+  padding: 40px 20px;
+  box-shadow: 1px 1px 10px rgb(189, 183, 183);
+  border-radius: 5px;
+}
+input {
+  height: 40px;
+  border-radius: 5px;
+  border: 0.1px solid rgb(117, 117, 181);
+  padding: 10px;
+  margin-bottom: 10px;
+}
+input::placeholder {
+  color: rgba(117, 117, 181, 0.799);
+}
+button {
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  background-color: rgb(117, 117, 181);
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: rgb(171, 171, 236);
+}
+@media screen and (min-width: 1024px) {
+  header {
+    padding: 40px;
+  }
+  h1 {
+    font-size: 32px;
+  }
+  a {
+    font-size: 18px;
+  }
+}
