@@ -1,8 +1,12 @@
 let cardCounter = 1;
 
+const inputName = document.getElementById("name");
+const inputNumber = document.getElementById("number");
+const inputEmail = document.getElementById("email");
+
 const addBtn = document.querySelector(".add-btn");
 const submit = document.getElementById("submit");
-// const info = document.getElementById("info");
+
 const info = document.querySelector(".formDiv");
 const container = document.querySelector(".container");
 
@@ -34,10 +38,21 @@ const form = document
 
     container.appendChild(newCardDiv);
 
+    // delete
     const deleteBtn = document.querySelectorAll(".delete");
     deleteBtn.forEach((button) => {
       button.addEventListener("click", () => {
-        console.log("????????", this.parentNode);
+        // console.log(button.parentElement.parentElement, cards.id);
+        button.parentElement.parentElement.remove();
+      });
+    });
+
+    // edit
+    const cardPlus = document.querySelector("card-plus");
+    const editBtn = document.querySelectorAll(".edit");
+    editBtn.forEach((button) => {
+      button.addEventListener("click", () => {
+        console.log("edited");
       });
     });
   });
@@ -47,63 +62,30 @@ function givi() {
   return form;
 }
 
-/*
-
-1) add new object to cards, use fake image url for now           +
-2) while adding new object, add ID for them                      +
-
-2) delete button should be delete element from cards array
-3) edit button should be edit element from cards array
-*/
-
-const cards = [
-  {
-    img: "https://img.freepik.com/premium-vector/young-girl-anime-style-character-vector-illustration-design-manga-anime-girl-hair-faces-cartoon_147933-1139.jpg",
-    name: "Name",
-    phone: "123456789",
-    email: "asd123@gmail.com",
-    id: 0,
-  },
-  {
-    img: "https://img.freepik.com/premium-vector/young-girl-anime-style-character-vector-illustration-design-manga-anime-girl-hair-faces-cartoon_147933-1139.jpg",
-    name: "Nanuka",
-    phone: "321123",
-    email: "qweqwe@gmail.com",
-    id: 1,
-  },
-  {
-    img: "https://img.freepik.com/premium-vector/young-girl-anime-style-character-vector-illustration-design-manga-anime-girl-hair-faces-cartoon_147933-1139.jpg",
-    name: "Nino",
-    phone: "9999999",
-    email: "dfgfg2@gmail.com",
-    id: 2,
-  },
-];
-
-const postMethods = () => {
-  cards.map((postData) => {
-    const postElement = document.createElement("div");
-    postElement.classList.add("card");
-    postElement.innerHTML = `
-    <img
-          class="photo"
-          src="${postData.img}"
-          alt="photo"
-        />
-        <div class="contact">
-          <h2>${postData.name}</h2>
-          <p>${postData.phone}</p>
-          <p>${postData.email}</p>
-        </div>
-        <div class="del-edit">
-          <button class="edit">Edit</button>
-          <button class="delete">Delete</button>
-        </div>
-    `;
-    container.appendChild(postElement);
-  });
-};
-postMethods();
+const cards = [];
+// const cards = [
+//   {
+//     img: "https://img.freepik.com/premium-vector/young-girl-anime-style-character-vector-illustration-design-manga-anime-girl-hair-faces-cartoon_147933-1139.jpg",
+//     name: "Name",
+//     phone: "123456789",
+//     email: "asd123@gmail.com",
+//     id: 0,
+//   },
+//   {
+//     img: "https://img.freepik.com/premium-vector/young-girl-anime-style-character-vector-illustration-design-manga-anime-girl-hair-faces-cartoon_147933-1139.jpg",
+//     name: "Nanuka",
+//     phone: "321123",
+//     email: "qweqwe@gmail.com",
+//     id: 1,
+//   },
+//   {
+//     img: "https://img.freepik.com/premium-vector/young-girl-anime-style-character-vector-illustration-design-manga-anime-girl-hair-faces-cartoon_147933-1139.jpg",
+//     name: "Nino",
+//     phone: "9999999",
+//     email: "dfgfg2@gmail.com",
+//     id: 2,
+//   },
+// ];
 
 function gikeqsa(param1) {
   let pp = {
@@ -115,12 +97,20 @@ function gikeqsa(param1) {
   cards.push(pp);
 
   console.log("gikeqsashi vart", cards);
+  info.classList.remove("visible");
+  info.classList.add("formDiv");
+  addBtn.classList.remove("hide");
 }
 
 addBtn.addEventListener("click", (event) => {
   event.preventDefault();
+  inputName.value = "";
+  inputNumber.value = "";
+  inputEmail.value = "";
   addBtn.classList.add("hide");
-  // ??????????????????????????
-  // info.classList.add("visible");
-  // form.classList.add("visible");
+  info.classList.remove("formDiv");
+  info.classList.add("visible");
 });
+
+// edit:
+// when I click edit, certain card should change its class to cardPlus, with inputed values that had before, change and submited again

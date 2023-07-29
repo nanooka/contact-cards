@@ -4,6 +4,7 @@
 }
 body {
   font-family: "Open Sans";
+  background-color: rgb(224, 224, 236);
 }
 header {
   background-color: rgb(171, 171, 236);
@@ -35,7 +36,6 @@ a:hover {
   align-items: center;
   flex-direction: column;
   gap: 50px;
-  background-color: rgb(224, 224, 236);
 }
 .add-btn {
   color: rgb(117, 117, 181);
@@ -118,7 +118,9 @@ h2 {
 .visible {
   display: block;
 }
-
+.hidden-card {
+  display: none;
+}
 .info {
   display: flex;
   flex-direction: column;
@@ -126,7 +128,10 @@ h2 {
   /* display: none; */
 }
 .formDiv {
-  /* display: none; */
+  display: none;
+}
+.red {
+  background-color: red;
 }
 input {
   height: 30px;
