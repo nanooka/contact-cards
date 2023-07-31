@@ -111,6 +111,37 @@ h2 {
 .edit:hover {
   color: rgb(127, 175, 201);
 }
+.editing-card {
+  width: 400px;
+  height: 350px;
+  box-shadow: 5px 5px 10px rgb(169, 164, 164);
+  background-color: white;
+  color: rgb(117, 117, 181);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.editing-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.editing-submit {
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  color: rgb(117, 117, 181);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  background-color: rgb(224, 224, 236);
+}
+
+.editing-submit:hover {
+  background-color: rgb(192, 192, 234);
+}
+
 .hide {
   display: none;
 }

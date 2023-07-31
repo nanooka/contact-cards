@@ -11,8 +11,9 @@
     <header>
       <h1>Contact cards</h1>
       <div class="log-sign">
-        <a href="">Log in</a>
-        <a href="signup.html">Sign up</a>
+        <!-- <a href="">Log in</a>
+        <a href="signup.html">Sign up</a> -->
+        <a href="">Log out</a>
       </div>
     </header>
     <main>
@@ -52,6 +53,30 @@
             <button class="edit">Edit</button>
             <button class="delete">Delete</button>
           </div>
+        </div>
+        <div class="editing-card hide">
+          <form class="editing-form">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              name="name"
+              id="editing-name"
+              autocomplete="given-name"
+            />
+
+            <label for="number">Phone number</label>
+            <input type="text" id="editing-number" name="number" />
+
+            <label for="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="editing-email"
+              autocomplete="off"
+            />
+
+            <button class="editing-submit" type="submit">Submit</button>
+          </form>
         </div>
       </div>
     </main>
