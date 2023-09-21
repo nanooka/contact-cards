@@ -4,7 +4,6 @@ const addNewContact = document.getElementById("add-modal");
 const cancelButton = addNewContact.querySelector(".cancel");
 const addButton = addNewContact.querySelector(".add");
 const userInputs = addNewContact.querySelectorAll("input");
-const axios = require("axios");
 
 const contacts = [];
 
@@ -55,12 +54,9 @@ const newContact = {
 };
 
 async function addContactHandler() {
-  try {
-    const result = await axios.get("http://localhost:3001/contacts");
-    console.log("es aris mongodan wamosuli data ", result.data);
-  } catch (error) {
-    console.log(error);
-  }
+  showContactModal();
+
+  // use fetch api instead of axios
 }
 
 console.log("This Is New Contact", newContact);
