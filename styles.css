@@ -60,6 +60,12 @@ button {
 button:hover {
   background-color: rgb(171, 171, 236);
 }
+#password-error,
+#confirm-password-error {
+  color: red;
+  font-size: 12px;
+  margin-top: -10px;
+}
 @media screen and (min-width: 1024px) {
   header {
     padding: 40px;

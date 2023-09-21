@@ -140,7 +140,7 @@ const addContactHandler = () => {
     newContact.name,
     newContact.number,
     newContact.email,
-    newContact.image
+    newContact.image,
   );
 };
 

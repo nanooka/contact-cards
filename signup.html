@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -12,9 +12,10 @@
       <h1>Contact cards</h1>
     </header>
     <main>
-      <form>
+      <form id="registration-form" onsubmit="return validation()" method="post">
         <label for="email">Enter email</label>
         <input
+          id="email"
           type="email"
           placeholder="email"
           name="email"
@@ -23,23 +24,28 @@
         />
         <label for="password">Enter password</label>
         <input
+          id="password"
           type="password"
           name="password"
           placeholder="password"
           autocomplete="off"
           required
         />
-        <label for="password">Confirm password</label>
+        <div id="password-error" class="error-message"></div>
+        <label for="confirm-password">Confirm password</label>
         <input
+          id="confirm-password"
           type="password"
           name="password"
           placeholder="password"
           autocomplete="off"
           required
         />
+        <div id="confirm-password-error" class="error-message"></div>
         <button>Sign up</button>
       </form>
       <p>Already have an account? <a href="index.html">Log in</a></p>
     </main>
+    <script src="signup.js"></script>
   </body>
 </html>
