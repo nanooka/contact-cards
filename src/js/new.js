@@ -52,6 +52,7 @@ const cancelAddContactHandler = () => {
 //   email: emailValue,
 //   // image: imageUrlValue,
 // };
+let newContact;
 
 const addContactHandler = () => {
   const nameValue = userInputs[0].value;
@@ -63,33 +64,35 @@ const addContactHandler = () => {
     alert("Please fill the gaps");
     return; // Exit the function if required fields are not filled
   }
-  const newContact = {
+  newContact = {
     name: nameValue,
     number: numberValue,
     email: emailValue,
     // image: imageUrlValue,
   };
+  console.log(newContact);
 
   // Send a POST request to your back-end API endpoint
-  fetch("http://localhost:3001/add_contact", {
-    method: "POST",
-    // mode: "no-cors",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(newContact),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log("Contact added:", data);
-      closeContactModal();
-      clearContactInput();
-    })
-    .catch((error) => {
-      console.error("Error adding contact:", error);
-      // Handle errors, e.g., display an error message to the user
-    });
 };
+fetch("http://localhost:3001/add_contact", {
+  method: "POST",
+  mode: "no-cors",
+  headers: {
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "*",
+  },
+  body: JSON.stringify(newContact),
+})
+  .then((response) => response.json())
+  .then((data) => {
+    console.log("Contact added:", data);
+    closeContactModal();
+    clearContactInput();
+  })
+  .catch((error) => {
+    console.error("Error adding contact:", error);
+    // Handle errors, e.g., display an error message to the user
+  });
 
 // async function addContactHandler() {
 //   try {
