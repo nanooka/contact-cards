@@ -1,7 +1,7 @@
 {
   "name": "contact-cards",
   "version": "1.0.0",
-  "type": "commonjs",
+  "type": "module",
   "description": "",
   "main": "new.js",
   "scripts": {
@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "lite-server": "^2.6.1",
-    "prettier": "3.0.3"
+    "prettier": "3.0.3",
+    "webpack": "^5.88.2"
   }
 }
