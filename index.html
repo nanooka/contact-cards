@@ -5,35 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact cards</title>
     <link rel="stylesheet" href="src/styles/reset.css" />
-    <link rel="stylesheet" href="src/styles/styles.css" />
+    <link rel="stylesheet" href="src/styles/new.css" />
   </head>
   <body>
-    <!-- <header>
-      <h1>Contact cards</h1>
-    </header>
-    <main>
-      <h2>Manage your contacts with us</h2>
-      <form>
-        <label for="name">Enter email</label>
-        <input
-          type="email"
-          placeholder="email"
-          name="name"
-          autocomplete="off"
-          required
-        />
-        <label for="password">Enter password</label>
-        <input
-          type="password"
-          name="password"
-          placeholder="password"
-          autocomplete="off"
-          required
-        />
-        <button>Log in</button>
+    <div id="backdrop"></div>
+    <div class="modal card" id="add-modal">
+      <form class="modal__content">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" autocomplete="given-name" />
+
+        <label for="number">Phone number</label>
+        <input type="text" name="number" id="number" />
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" autocomplete="off" />
+
+        <label for="image-url">Image URL</label>
+        <input type="text" name="image-url" id="image-url" />
       </form>
-      <p>Don't have an account? <a href="signup.html">Sign up</a></p>
-    </main> -->
-    <a href="./src/pages/new.html">Add Contact</a>
+      <div class="modal__actions">
+        <button class="btn cancel">Cancel</button>
+        <button class="btn add">Add</button>
+      </div>
+    </div>
+    <header>
+      <h1>Contact cards</h1>
+      <a href="">Log out</a>
+    </header>
+    <section>
+      <button>Add contact</button>
+    </section>
+    <main>
+      <ul id="contact-list"></ul>
+    </main>
+    <script src="./src/js/new.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </body>
 </html>

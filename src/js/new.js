@@ -4,7 +4,6 @@ const addNewContact = document.getElementById("add-modal");
 const cancelButton = addNewContact.querySelector(".cancel");
 const addButton = addNewContact.querySelector(".add");
 const userInputs = addNewContact.querySelectorAll("input");
-const axios = require("axios");
 
 const contacts = [];
 
@@ -38,32 +37,101 @@ const cancelAddContactHandler = () => {
   clearContactInput();
 };
 
-const nameValue = userInputs[0].value;
-const numberValue = userInputs[1].value;
-const emailValue = userInputs[2].value;
-const imageUrlValue = userInputs[3].value;
+// const nameValue = userInputs[0].value;
+// const numberValue = userInputs[1].value;
+// const emailValue = userInputs[2].value;
+// const imageUrlValue = userInputs[3].value;
 
-if (nameValue.trim() === "" || numberValue.trim() === "") {
-  alert("Please fill the gaps");
-}
+// if (nameValue.trim() === "" || numberValue.trim() === "") {
+//   alert("Please fill the gaps");
+// }
 
-const newContact = {
-  name: nameValue,
-  number: numberValue,
-  email: emailValue,
-  image: imageUrlValue,
+// const newContact = {
+//   name: nameValue,
+//   number: numberValue,
+//   email: emailValue,
+//   // image: imageUrlValue,
+// };
+
+const addContactHandler = () => {
+  const nameValue = userInputs[0].value;
+  const numberValue = userInputs[1].value;
+  const emailValue = userInputs[2].value;
+  // const imageUrlValue = userInputs[3].value;
+
+  if (nameValue.trim() === "" || numberValue.trim() === "") {
+    alert("Please fill the gaps");
+    return; // Exit the function if required fields are not filled
+  }
+  const newContact = {
+    name: nameValue,
+    number: numberValue,
+    email: emailValue,
+    // image: imageUrlValue,
+  };
+
+  // Send a POST request to your back-end API endpoint
+  fetch("http://localhost:3001/add_contact", {
+    method: "POST",
+    // mode: "no-cors",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(newContact),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Contact added:", data);
+      closeContactModal();
+      clearContactInput();
+    })
+    .catch((error) => {
+      console.error("Error adding contact:", error);
+      // Handle errors, e.g., display an error message to the user
+    });
 };
 
-async function addContactHandler() {
-  try {
-    const result = await axios.get("http://localhost:3001/contacts");
-    console.log("es aris mongodan wamosuli data ", result.data);
-  } catch (error) {
-    console.log(error);
-  }
-}
+// async function addContactHandler() {
+//   try {
+//     const result = await axios.get("http://localhost:3001/contacts");
+//     console.log("es aris mongodan wamosuli data ", result.data);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
 
-console.log("This Is New Contact", newContact);
+// async function addContactHandler() {
+//   // fetch("http://localhost:3001/contacts", {
+//   //   method: "POST",
+//   //   headers: {
+//   //     "Content-type": "application/json",
+//   //   },
+//   //   body: JSON.stringify(newContact),
+//   // });
+//   const contactData = {
+//     name: "John Doe",
+//     email: "johndoe@example.com",
+//     // Other contact fields
+//   };
+
+//   fetch("http://localhost:3001/contacts", {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify(contactData),
+//   })
+//     .then((response) => response.json())
+//     .then((data) => {
+//       console.log("Contact card created:", data);
+//       // Perform any necessary actions after creating the card
+//     })
+//     .catch((error) => {
+//       console.error("Error creating contact card:", error);
+//     });
+// }
+
+// console.log("This Is New Contact", newContact);
 
 closeContactModal();
 clearContactInput();
