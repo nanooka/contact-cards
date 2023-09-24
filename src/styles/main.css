@@ -184,6 +184,18 @@ input {
 #submit:hover {
   background-color: rgb(192, 192, 234);
 }
+#contact-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+.contact-list-element {
+  padding: 10px 20px;
+  background-color: white;
+  width: 300px;
+  border-radius: 10px;
+}
 @media screen and (min-width: 1024px) {
   header {
     padding: 40px;
@@ -197,6 +209,11 @@ input {
   .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+  }
+  #contact-container {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 40px 80px;
+    gap: 30px;
   }
 }
 @media screen and (min-width: 1440px) {

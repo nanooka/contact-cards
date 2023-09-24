@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="src/styles/new.css" />
   </head>
   <body>
-    <div id="backdrop"></div>
+    <!-- <div id="backdrop"></div>
     <div class="modal card" id="add-modal">
       <form class="modal__content">
         <label for="name">Name</label>
@@ -27,18 +27,34 @@
         <button class="btn cancel">Cancel</button>
         <button class="btn add">Add</button>
       </div>
-    </div>
+    </div> -->
     <header>
       <h1>Contact cards</h1>
       <a href="">Log out</a>
     </header>
     <section>
-      <button>Add contact</button>
+      <div class="modal card" id="add-modal"></div>
+      <form class="modal__content">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" autocomplete="given-name" />
+
+        <label for="number">Phone number</label>
+        <input type="text" name="number" id="number" />
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" autocomplete="off" />
+      </form>
+      <div class="modal__actions">
+        <button class="btn cancel">Cancel</button>
+        <button class="btn add">Add</button>
+      </div>
+      <!-- <button>Add contact</button> -->
+      <a href="/src/pages/contact-list.html">view list</a>
     </section>
-    <main>
+    <!-- <main>
       <ul id="contact-list"></ul>
-    </main>
-    <script src="./src/js/new.js"></script>
+    </main> -->
+    <script src="./src/js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </body>
 </html>
