@@ -4,13 +4,13 @@ addButton.addEventListener("click", function (event) {
 
   // Get the input values
   const name = document.getElementById("name").value;
-  const number = document.getElementById("number").value;
+  const phone_number = document.getElementById("number").value;
   const email = document.getElementById("email").value;
 
   // Create an object with the data to send
   const data = {
     name: name,
-    number: number,
+    phone_number: phone_number,
     email: email,
   };
 
