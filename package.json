@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "type": "module",
   "description": "",
-  "main": "contact-list.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node contact-list.js",
+    "start-index": "node src/js/index.js",
+    "start-contact-list": "node src/js/contact-list.js",
     "dev": "lite-server"
   },
   "keywords": [],

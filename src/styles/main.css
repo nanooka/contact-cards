@@ -186,7 +186,9 @@ input {
 }
 #contact-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  /* grid-template-columns: repeat(2, 1fr); */
+  grid-template-columns: 1fr;
+  justify-items: center;
   gap: 20px;
   padding: 20px;
 }
@@ -195,6 +197,11 @@ input {
   background-color: white;
   width: 300px;
   border-radius: 10px;
+}
+@media screen and (min-width: 768px) {
+  #contact-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 @media screen and (min-width: 1024px) {
   header {
