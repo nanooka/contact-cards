@@ -1,3 +1,8 @@
+import "../styles/reset.css";
+// import "../styles/styles.css";
+// import "../styles/main.css";
+import "../styles/new.css";
+
 const addButton = document.querySelector(".btn.add");
 addButton.addEventListener("click", function (event) {
   event.preventDefault(); // Prevent the default form submission
@@ -30,7 +35,7 @@ addButton.addEventListener("click", function (event) {
     })
     .then((responseData) => {
       // Handle the response data, e.g., display a success message
-      console.log("Contact added successfully:", responseData);
+      console.log("Contact added succqessfully:", responseData);
 
       // You can also reset the form or perform other actions as needed
     })
