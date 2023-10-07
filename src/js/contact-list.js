@@ -1,9 +1,4 @@
-// import "../styles/reset.css";
-// import "../styles/styles.css";
-// import "../styles/main.css";
-// import "../styles/new.css";
-
-console.log("here");
+console.log("this is contact-list.js below");
 fetch("http://localhost:3005/contacts")
   .then((response) => {
     if (!response.ok) {
@@ -16,6 +11,7 @@ fetch("http://localhost:3005/contacts")
     const contactContainer = document.getElementById("contact-container");
     // let htmlContent = "";
     data.forEach((contact) => {
+      let num = 0;
       const card = document.createElement("div");
       card.classList.add("contact-list-element");
 
@@ -23,9 +19,17 @@ fetch("http://localhost:3005/contacts")
         <h2>${contact.name}</h2>
         <p>${contact.phone_number}</p>
         <p>${contact.email}</p>
+        <img class="image" src="${
+          "http://localhost:3005/" + contact.image
+        }" alt="image of ${contact.name}">
       `;
+
+      // <img src="data:image/jpeg;base64,${btoa(
+      //   String.fromCharCode.apply(null, new Uint8Array(contact.image))
+      // )}" />
       card.innerHTML = cardContent;
       contactContainer.appendChild(card);
+      num++;
     });
   })
   .catch((error) => {

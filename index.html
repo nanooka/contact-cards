@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact cards</title>
-    <link rel="stylesheet" href="src/styles/reset.css" />
-    <link rel="stylesheet" href="src/styles/new.css" />
+    <!-- <link rel="stylesheet" href="src/styles/reset.css" />
+    <link rel="stylesheet" href="src/styles/new.css" /> -->
   </head>
   <body>
     <!-- <div id="backdrop"></div>
@@ -43,18 +43,27 @@
 
         <label for="email">Email</label>
         <input type="email" name="email" id="email" autocomplete="off" />
+
+        <label for="image">Image</label>
+        <input type="file" name="image" id="image" accept="image/*" />
       </form>
       <div class="modal__actions">
         <button class="btn cancel">Cancel</button>
         <button class="btn add">Add</button>
       </div>
       <!-- <button>Add contact</button> -->
-      <a href="/src/pages/contact-list.html">view list</a>
+      <a href="/contact-list.html">view list</a>
     </section>
     <main>
       <ul id="contact-list"></ul>
     </main>
-    <script src="./src/js/index.js"></script>
+    <script src="main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </body>
 </html>
+<!-- 1) Make Webpack Config To be: 3 html file output, one css file output and 1 js file output. input to be multiple html, css and js files. 
+2) replace fetch with Axios. make sure that import and export works properly.
+3) Add image uploading on mongodb -->
+<!-- 4) replace your css with bootstrap styles -->
+<!-- css in dist -->
+<!-- fonts -->

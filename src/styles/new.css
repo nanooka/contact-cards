@@ -24,7 +24,9 @@ body {
   display: block;
   pointer-events: all;
 }
-
+.image {
+  width: 50%;
+}
 .modal {
   position: fixed;
   z-index: 100;

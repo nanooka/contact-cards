@@ -197,6 +197,7 @@ input {
   background-color: white;
   width: 300px;
   border-radius: 10px;
+  overflow-wrap: break-word;
 }
 @media screen and (min-width: 768px) {
   #contact-container {
